@@ -1,11 +1,11 @@
 package com.workintech.s18d1;
 
-import com.workintech.s18d1.dao.BurgerDao;
 import com.workintech.s18d1.dao.BurgerDaoImpl;
+import com.workintech.s18d1.exceptions.BurgerException;
+import com.workintech.s18d1.exceptions.BurgerErrorResponse;
+import com.workintech.s18d1.dao.BurgerDao;
 import com.workintech.s18d1.entity.BreadType;
 import com.workintech.s18d1.entity.Burger;
-import com.workintech.s18d1.exceptions.BurgerErrorResponse;
-import com.workintech.s18d1.exceptions.BurgerException;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import org.junit.jupiter.api.BeforeEach;
@@ -161,8 +161,8 @@ class MainTest {
     }
     @Test
     void testImplementsBurgerDaoInterface() {
-        BurgerDaoImpl burgerDaoImpl = new BurgerDaoImpl(null);
-        assertTrue(burgerDaoImpl instanceof BurgerDao, "BurgerDaoImpl should implement BurgerDao interface");
+        BurgerDao burgerDao = new BurgerDaoImpl(null);
+        assertTrue(burgerDao instanceof BurgerDao, "BurgerDaoImpl should implement BurgerDao interface");
     }
 
     @Test

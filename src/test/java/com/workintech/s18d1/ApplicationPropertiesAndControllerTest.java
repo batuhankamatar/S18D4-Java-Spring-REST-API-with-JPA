@@ -17,6 +17,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Arrays;
@@ -69,7 +70,7 @@ class ApplicationPropertiesAndControllerTest {
     void serverPortIsSetTo8585() {
 
         String serverPort = env.getProperty("server.port");
-        assertThat(serverPort).isEqualTo("9000");
+        assertThat(serverPort).isEqualTo("8585");
 
 
 
